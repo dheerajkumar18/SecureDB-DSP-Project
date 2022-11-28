@@ -66,7 +66,6 @@ class CustomCursor(psycopg2.extensions.cursor):
                 if [True for each_filter in encryption_columns if each_filter in filters[each]]:
                     results[result_index][each] = decrypt_encryption_block(results[result_index][each])
             results[result_index] = tuple(results[result_index])
-        results
 
     def fetchall(self):
         results = super().fetchall()
